@@ -8,55 +8,21 @@ import java.util.regex.*;
 
 public class Solution {
 
-    public static int minimumNumber(int n, String password) {
-      String  numbers = "0123456789";
-       String lower_case = "abcdefghijklmnopqrstuvwxyz";
-        String upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String special_characters = "!@#$%^&*()-+";
-        // Return the minimum number of characters to make the password strong
-        int remaining=4;
-        boolean lower = false, num = false ,upper = false,spec= false,len=false;
-
-        for (int i = 0; i < password.length() ; i++) {
-            String ch= password.charAt(i)+"";
-
-            if(!num && numbers.indexOf(ch) != -1 )
-            {
-                num=true;
-                remaining--;
-            }
-            if(!lower && lower_case.indexOf(ch) != -1 )
-            {
-                lower=true;
-                remaining--;
-            }
-
-            if(!upper && upper_case.indexOf(ch) != -1 )
-            {
-                upper=true;
-                remaining--;
-            }
-            if(!spec && special_characters.indexOf(ch) != -1 )
-            {
-                spec=true;
-                remaining--;
-            }
-        }
-
-        if(password.length() < 6 && remaining + password.length() < 6){
-
-           remaining += 6 - (remaining + password.length()) ;
-        }
+    /*
+     * Complete the 'findMedian' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
 
 
-        return remaining;
-    }
 
 
 
     public static void main(String[] args) throws IOException {
+        Integer [] arr= {0 ,1 ,2, 4, 6, 5, 3};
+     List<Integer> list = Arrays.asList(arr);
 
-     System.out.println(minimumNumber(3, "Ab1"));
 
     }
 }
